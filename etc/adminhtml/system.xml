@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!--<tab id="masspriceupdater" translate="label" sortOrder="10">
+            <label>AV MassPriceUpdater</label>
+        </tab>-->
+        <section id="masspriceupdater_setup" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>AV MassPriceUpdater - Price Configuration</label>
+            <tab>catalog</tab>
+            <resource>AV_MassPriceUpdater::masspriceupdater_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Configuration</label>
+                <field id="category_list" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category / Categories</label>
+                    <comment>
+                        <![CDATA[Select category / categories for price updater <br>
+                           Selected category products price will be updated]]>
+                    </comment>
+                    <validate>required-entry</validate>
+                    <source_model>AV\MassPriceUpdater\Model\Config\Source\CategoryList</source_model>
+                </field>
+                <field id="price_attribute" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Price type(s)</label>
+                    <comment>
+                        <![CDATA[Select price type(s) <br>
+                           Selected price type(s) will be updated]]>
+                    </comment>
+                    <validate>required-entry</validate>
+                    <source_model>AV\MassPriceUpdater\Model\Config\Source\PriceAttribute</source_model>
+                </field>
+                <field id="updater_type" translate="label" type="select"
+                       sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Update type</label>
+                    <comment><![CDATA[Here you can select the update type <br>
+                            <strong>If you select 'fixed', please fill the field price</strong><br>
+                            <strong>If you select 'percentage', please fill the field percentage</strong>]]></comment>
+                    <validate>required-entry</validate>
+                    <source_model>AV\MassPriceUpdater\Model\Config\Source\PriceType</source_model>
+                </field>
+                <field id="price" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Price</label>
+                    <comment>
+                        <![CDATA[Set amount, negative or positive]]></comment>
+                </field>
+                <field id="percentage" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Percentage</label>
+                    <comment>
+                        <![CDATA[Set percentage, negative or positive <br>
+                            For example: -20% or 20%]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
