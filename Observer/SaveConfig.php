@@ -11,9 +11,16 @@ class SaveConfig implements ObserverInterface
     *   Start the update process, after save the config
     */
 
+    protected $massUpdater;
+
+    public function __construct(
+        \AV\MassPriceUpdater\Model\Updater\MassUpdater $massUpdater
+    ) {
+        $this->_massUpdater = $massUpdater;
+    }
+
     public function execute(EventObserver $observer)
     {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        return $objectManager->get('AV\MassPriceUpdater\Model\Updater\MassUpdater');
+        return $this->_massUpdater;
     }
 }
