@@ -16,11 +16,11 @@ class SaveConfig implements ObserverInterface
     public function __construct(
         \AV\MassPriceUpdater\Model\Updater\MassUpdater $massUpdater
     ) {
-        $this->_massUpdater = $massUpdater;
+        $this->massUpdater = $massUpdater;
     }
 
     public function execute(EventObserver $observer)
     {
-        return $this->_massUpdater;
+        return $this->massUpdater;
     }
 }
