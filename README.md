@@ -1,5 +1,6 @@
 AV_MassPriceUpdater for Magento 2.x
 =====================
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/adamvarga28)
 
 Mass Price Updater
 
